@@ -174,8 +174,7 @@ El sistema generará un archivo Excel final con:
 # Estructura Propuesta del Proyecto
 
 ```text
-lead_mining_engine/
-│
+
 ├── data/
 │   ├── inputs/
 │   ├── outputs/
