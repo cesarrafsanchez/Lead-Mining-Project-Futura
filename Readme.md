@@ -174,42 +174,51 @@ El sistema generará un archivo Excel final con:
 # Estructura Propuesta del Proyecto
 
 ```text
-lead_enrichment_system/
+lead_mining_engine/
+│
+├── data/
+│   ├── inputs/
+│   ├── outputs/
+│   ├── temp/
+│   └── logs/
 │
 ├── preprocessing/
 │   ├── split_rucs.py
+│   ├── dni_extractor.py
 │   ├── district_classifier.py
-│   └── deduplicator.py
+│   └── cleaner.py
 │
 ├── sunat/
-│   └── representative_extractor.py
+│   ├── sunat_scraper.py
+│   ├── representative_parser.py
+│   └── captcha_handler.py
 │
 ├── tacto/
-│   └── tacto_scraper.py
+│   ├── tacto_scraper.py
+│   ├── session_manager.py
+│   └── phone_parser.py
 │
 ├── validation/
 │   ├── osiptel_validator.py
-│   └── phone_scorer.py
+│   └── phone_cleaner.py
 │
 ├── exports/
 │   └── excel_exporter.py
 │
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   ├── outputs/
-│   └── logs/
-│
 ├── shared/
+│   ├── base_scraper.py
 │   ├── logger.py
 │   ├── utils.py
-│   └── base_scraper.py
+│   └── config.py
 │
 ├── tests/
 │
-├── docs/
-│
-└── main.py
+├── main.py
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── .env
+└── README.md
 ```
 
 ---
